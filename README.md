@@ -9,6 +9,7 @@ Meet App is a serverless, progressive web application (PWA) built with React, fo
 - [Features](#features)
 - [User Stories](#user-stories)
 - [Scenarios](#scenarios)
+- [Serverless Functions](#serverless-functions)
 - [Technical Requirements](#technical-requirements)
 - [Installation](#installation)
 - [Usage](#usage)
@@ -108,6 +109,22 @@ Meet App is a serverless, progressive web application (PWA) built with React, fo
 - Given the user wants to view event statistics,
 - When the user navigates to the event statistics section,
 - Then the app should display a chart showing the number of upcoming events in each city.
+
+## Serverless Functions
+
+Meet App utilizes serverless functions to efficiently handle various backend tasks. These functions play a crucial role in performing tasks such as user authentication and fetching event data from the Google Calendar API.
+
+### Benefits of Serverless Functions
+
+- **Simplified Backend**: Our adoption of serverless architecture eliminates the need for traditional backend servers, leading to reduced complexity and minimal maintenance overhead.
+
+- **Scalability**: Serverless functions automatically scale based on user demand, ensuring that the app remains responsive even during traffic spikes.
+
+- **Cost-Effectiveness**: With serverless computing, we only incur costs for the actual compute time utilized. This cost-effective model is particularly advantageous for apps with varying usage patterns.
+
+- **High Availability**: Serverless functions are designed for high availability, guaranteeing that our app remains accessible 24/7.
+
+These serverless functions are indispensable to the seamless operation of Meet App, providing essential backend functionality while allowing us to concentrate on delivering an exceptional user experience.
 
 ## Technical Requirements
 
