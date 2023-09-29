@@ -26,6 +26,13 @@ describe('<App /> component', () => {
     expect(AppDOM.querySelector('#city-search')).toBeInTheDocument();
     });
 
+  // Feature 3: Specify Number of Events
+  // Scenario 1: Given the user has not specified the number of events to display,
+  // When the user opens the app,
+  // Then the user should see 32 events in the events list by default.
+  test('the NumberOfEvents component is rendered correctly', () => {
+    expect(AppDOM.querySelector('#eventCount-textbox')).toBeInTheDocument();
+  });
 
 
 });
