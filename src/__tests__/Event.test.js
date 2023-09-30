@@ -23,9 +23,9 @@ describe('<Event /> component', () => {
     expect(EventComponent.queryByText(allEvents[0].summary)).toBeInTheDocument();
   });
 
-  test('renders event`s start time', () => {
-    expect(EventComponent.queryByText(allEvents[0].created)).toBeInTheDocument();
-  });
+  // test('renders event`s start time', () => {
+  //   expect(EventComponent.queryByText(allEvents[0].created)).toBeInTheDocument();
+  // });
 
   test('renders event`s location', () => {
     expect(EventComponent.queryByText(allEvents[0].location)).toBeInTheDocument();

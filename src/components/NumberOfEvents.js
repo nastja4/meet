@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
-const NumberOfEvents = () => {
+const NumberOfEvents = ({ }) => {
   const [numberOfEvents, setNumberOfEvents] = useState(32);
 
   const handleInputChange = (e) => {
@@ -9,16 +9,15 @@ const NumberOfEvents = () => {
 
   return (
     <div id="numberOfEvents">
-      <label htmlFor="eventCount">Number of Events:</label>
+      <label htmlFor="eventCount">Number of Events: </label>
       <input id="eventCount-input"
         type="text"        
         value={numberOfEvents}
         onChange={handleInputChange}
-        min="1"
       />
     </div>
   );
-};
+}
 
 export default NumberOfEvents;
 
