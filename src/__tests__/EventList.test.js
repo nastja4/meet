@@ -31,8 +31,8 @@ describe('<EventList /> integration', () => {
     const AppComponent = render(<App />);
     const AppDOM = AppComponent.container.firstChild;
     const EventListDOM = AppDOM.querySelector('#event-list');
-    await waitFor(() => {
-      const EventListItems = within(EventListDOM).queryAllByRole('listitem');
+    await waitFor(() => {                                     // waitFor() is useful if you need a way to query elements in the page that aren’t rendered immediately
+      const EventListItems = within(EventListDOM).queryAllByRole('listitem'); // within() allows you to use React Testing Library query functions on the passed DOM object
       expect(EventListItems.length).toBe(32);
     });
   });

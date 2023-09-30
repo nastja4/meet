@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-const CitySearch = ({ allLocations}) => {
+const CitySearch = ({ allLocations, setCurrentCity }) => {
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [query, setQuery] = useState("");
   const [suggestions, setSuggestions] = useState([]);
@@ -19,13 +19,18 @@ const CitySearch = ({ allLocations}) => {
     const value = event.target.textContent;
     setQuery(value);
     setShowSuggestions(false); // to hide the list
+    setCurrentCity(value);
   };
+
+  // Initializes the local state suggestions to have the default value as the same array as its allLocations prop
+  useEffect(() => {
+    setSuggestions(allLocations);
+  }, [`${allLocations}`]);
 
   return (
     <div id="city-search">
-      <input 
-        type="text"
-        className="city"
+      <input className="city"
+        type="text"        
         placeholder="Search for a city"
         value={query}
         onFocus={() => setShowSuggestions(true)}

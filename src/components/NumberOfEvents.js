@@ -10,7 +10,7 @@ const NumberOfEvents = () => {
   return (
     <div id="numberOfEvents">
       <label htmlFor="eventCount">Number of Events:</label>
-      <input id="eventCount-textbox"
+      <input id="eventCount-input"
         type="text"        
         value={numberOfEvents}
         onChange={handleInputChange}

@@ -8,8 +8,10 @@ import mockData from "./mock-data";
  * The Set will remove all duplicates from the array.
  */
 export const extractLocations = (events) => {
-  const extractedLocations = events.map((event) => event.location);
-  const locations = [...new Set(extractedLocations)];
+  const extractedLocations = events.map((event) => event.location);  
+  // This spread operator ([...]) is used to convert the Set back into an array
+  // The result is an array that contains all the unique elements from the original extractedLocations array, and any duplicates are removed
+  const locations = [...new Set(extractedLocations)]; 
   return locations;
 }
 
