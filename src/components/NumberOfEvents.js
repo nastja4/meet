@@ -17,6 +17,7 @@ const NumberOfEvents = ({ setCurrentNOE }) => {
         type="text"        
         defaultValue="32"
         onChange={handleInputChange}
+        placeholder="Enter the number of events"
       />
     </div>
   );

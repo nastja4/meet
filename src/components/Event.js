@@ -13,15 +13,15 @@ const Event = ({ event }) => {
     <li className="event">
       <h3>{event && event.summary}</h3>
       <p>{event && event.location}</p>
-      {/* <p>{event && (new Date(event.created)).toUTCString()}</p> */}
-      <p>{event && (new Date(event.start.dateTime).toLocaleDateString('en-GB'))}</p>
+      <p>{event && (new Date(event.start.dateTime)).toUTCString()}</p>
+      {/* <p>{event && (new Date(event.start.dateTime).toLocaleDateString('en-GB'))}</p>  */}
       
       {showDetails ? (
         <div className="eventDetails">
           <b>Event Details</b>  
           <p>Start Time: { event && (new Date(event.start.dateTime).toUTCString())}</p>
           <p>End Time: {event && (new Date(event.end.dateTime).toUTCString())}</p>
-          <p>{event.status}</p>
+          <p>Status: {event.status}</p>
           <p>Description: {event && event.description}</p>            
         </div>
       ) : null}
