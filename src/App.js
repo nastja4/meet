@@ -15,7 +15,7 @@ const App = () => {
 
   useEffect(() => {
     fetchData();
-  }, [currentCity]); // fetchData() is called whenever there’s a change in the currentCity state
+  }, [currentCity, currentNOE]); // fetchData() is called whenever there’s a change in the currentCity, currentNOE state
 
   const fetchData = async () => {
     const allEvents = await getEvents(); // getEvents() is the function from api.js
@@ -29,7 +29,7 @@ const App = () => {
  return (
    <div className="App">
      <CitySearch allLocations={allLocations} setCurrentCity={setCurrentCity} />  {/* passing a new state "allLocations" to the CitySearch component */}
-     <NumberOfEvents />
+     <NumberOfEvents setCurrentNOE={setCurrentNOE} />
      <EventList events={events} />
    </div>
  );

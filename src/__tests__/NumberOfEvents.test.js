@@ -6,7 +6,7 @@ describe('<NumberOfEvents /> component', () => {
   let NumberOfEventsComponent;
 
   beforeEach(() => {
-    NumberOfEventsComponent = render(<NumberOfEvents />);
+    NumberOfEventsComponent = render(<NumberOfEvents setCurrentNOE={() => {}} />); // manually passing a dummy setCurrentNOE function prop to the .render() call of that unit test
   });
 
   // Feature 3: Specify Number of Events
@@ -27,3 +27,5 @@ describe('<NumberOfEvents /> component', () => {
     expect(inputElement).toHaveValue('10');
   })
 });
+
+
