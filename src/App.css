@@ -126,6 +126,9 @@ input[type="number"] {
   border-radius: 4px;
   position: relative;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+
+  clear: both;
+  overflow: hidden;
 }
 
 
@@ -150,8 +153,10 @@ input[type="number"] {
 	background-image: linear-gradient(to bottom, #2E2EFF 0%, #032f88 100%);
 	border-radius: 5px;
   
-  /* position: absolute; */
-  /* right: 20px;
+  float: right;
+  margin-right: 20px;
+  /* position: absolute; 
+  right: 20px;
   bottom: 20px; */
   
 }
