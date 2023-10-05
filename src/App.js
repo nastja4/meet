@@ -26,8 +26,9 @@ const App = () => {
     setAllLocations(extractLocations(allEvents));
   }
 
- return (
+ return (  
    <div className="App">
+    <h1 className='main-title'><span>Meet</span> App </h1>
      <CitySearch allLocations={allLocations} setCurrentCity={setCurrentCity} />  {/* passing a new state "allLocations" to the CitySearch component */}
      <NumberOfEvents setCurrentNOE={setCurrentNOE} />
      <EventList events={events} />

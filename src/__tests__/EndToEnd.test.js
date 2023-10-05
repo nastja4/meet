@@ -38,3 +38,57 @@ describe('show/hide an event details', () => {
     expect(eventDetails).toBeNull();
   });
 });
+
+
+
+describe('Filter events by city', () => {
+  let browser;
+  let page;
+
+  beforeAll(async () => {
+    browser = await puppeteer.launch({
+      headless: false, // Set to true for headless mode
+      slowMo: 250, // Slow down by 250ms for better visibility (optional)
+      timeout: 0, // Removes any Puppeteer/browser timeout limitations
+    });
+    page = await browser.newPage();
+    await page.goto('http://localhost:3000/'); // Update the URL to your app's URL
+    await page.waitForSelector('.event');
+  });
+
+  afterAll(() => {
+    browser.close();
+  });
+
+  // Feat 1, Scenario 1: When user hasn’t searched for a city, show upcoming events from all cities.
+  test('Show upcoming events from all cities when no city is searched', async () => {
+    const eventListItems = await page.$$('.event');
+    expect(eventListItems.length).toBe(32); // Ensure events are displayed
+  });
+
+  // Feat 1, Scenario 2: User should see a list of suggestions when they search for a city.
+  test('Display suggestions when the user starts typing in the city textbox', async () => {
+    await page.type('.city', 'Berlin'); 
+    await page.waitForSelector('.suggestions li');
+    const suggestionListItems = await page.$$('.suggestions li');
+    expect(suggestionListItems.length).toBe(2); 
+  });
+
+  // Feat 1, Scenario 3: User can select a city from the suggested list.
+  test('Selecting a city from the suggestion list should update the city field and show events in that city', async () => {    
+    // page.$ selects the first matching element in the page
+    const suggestionListItem = await page.$('.suggestions li');
+    // DOM element (el) that matches the specified selector  
+    const cityName = await page.evaluate(el => el.textContent, suggestionListItem);
+    await suggestionListItem.click();
+
+    // waiting for events to be updated based on the selected city
+    await page.waitForSelector('.event');
+    const eventListItems = await page.$$('.event');
+
+    // to make sure the city field is updated and events are displayed for the selected city
+    const selectedCity = await page.$eval('.city', el => el.value);
+    expect(selectedCity).toBe(cityName);
+    expect(eventListItems.length).toBe(17); 
+  });
+});

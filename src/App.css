@@ -188,3 +188,40 @@ input[type="number"] {
   /* right: 20px;
   bottom: 20px; */
 }
+
+.main-title {
+  text-decoration: none; 
+  color: black;
+  font-weight: normal; 
+  font-style: normal;
+  font-size: 25px;
+}
+
+.main-title span {
+  font-weight: bold;
+  font-style: italic;
+  /* color: #070792; */
+  font-size: 35px;
+} 
+
+/* .main-title {
+  text-decoration: none;
+  font-weight: normal;
+  font-style: normal;
+  display: inline-block;
+  background: linear-gradient(90deg, black, #2e2eff);
+  background-clip: text;
+  color: transparent;
+  transition: color 1s, background 1s;
+}
+
+.main-title span {
+  font-weight: bold;
+  font-style: italic;
+  font-size: 35px;
+}
+
+.main-title:hover {
+  color: #2e2eff; 
+  background-position: 100%;
+} */
