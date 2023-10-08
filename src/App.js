@@ -4,6 +4,7 @@ import EventList from './components/EventList';
 import NumberOfEvents from './components/NumberOfEvents';
 import { useState, useEffect } from 'react';
 import { getEvents, extractLocations } from './api';
+import { InfoAlert } from './components/Alert';
 
 import './App.css';
 
@@ -12,6 +13,7 @@ const App = () => {
   const [currentNOE, setCurrentNOE] = useState(32);
   const [allLocations, setAllLocations] = useState([]);
   const [currentCity, setCurrentCity] = useState("See all cities");
+  const [infoAlert, setInfoAlert] = useState("");
 
   useEffect(() => {
     fetchData();
@@ -26,14 +28,22 @@ const App = () => {
     setAllLocations(extractLocations(allEvents));
   }
 
- return (  
-   <div className="App">
-    <h1 className='main-title'><span>Meet</span> App </h1>
-     <CitySearch allLocations={allLocations} setCurrentCity={setCurrentCity} />  {/* passing a new state "allLocations" to the CitySearch component */}
-     <NumberOfEvents setCurrentNOE={setCurrentNOE} />
-     <EventList events={events} />
-   </div>
- );
+  return (  
+    <div className="App">
+      <h1 className='main-title'><span>Meet</span> App </h1>
+
+      <div className="alerts-container">
+        {infoAlert.length ? <InfoAlert text={infoAlert} /> : null}
+      </div>      
+      <CitySearch 
+        allLocations={allLocations} 
+        setCurrentCity={setCurrentCity}
+        setInfoAlert={setInfoAlert} />  {/* passing a new state "allLocations", setInfoAlert to the CitySearch component */}
+      
+      <NumberOfEvents setCurrentNOE={setCurrentNOE} />
+      <EventList events={events} />
+    </div>
+  );
 }
 
 export default App;

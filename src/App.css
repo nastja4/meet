@@ -204,24 +204,10 @@ input[type="number"] {
   font-size: 35px;
 } 
 
-/* .main-title {
-  text-decoration: none;
-  font-weight: normal;
-  font-style: normal;
-  display: inline-block;
-  background: linear-gradient(90deg, black, #2e2eff);
-  background-clip: text;
-  color: transparent;
-  transition: color 1s, background 1s;
+.alerts-container {
+  position: fixed;
+  top: 0px;
+  left: 20px;
+  width: 250px;
+  z-index: 1000;
 }
-
-.main-title span {
-  font-weight: bold;
-  font-style: italic;
-  font-size: 35px;
-}
-
-.main-title:hover {
-  color: #2e2eff; 
-  background-position: 100%;
-} */
