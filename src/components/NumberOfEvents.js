@@ -1,13 +1,22 @@
 // import { useState } from 'react';
 import React from 'react';
 
-const NumberOfEvents = ({ setCurrentNOE }) => {
+const NumberOfEvents = ({ setCurrentNOE, setErrorAlert }) => {
   // const [numberOfEvents, setNumberOfEvents] = useState(32);
 
   const handleInputChange = (e) => {
     const value = e.target.value;
     // setNumberOfEvents(value);
-    setCurrentNOE(value);
+    // setCurrentNOE(value);
+
+    let errorText;
+    if (isNaN(value) || value <= 0) {
+      errorText = "The number of events is not defined or not valid"
+    } else {
+      errorText = "";
+      setCurrentNOE(value);
+    }
+    setErrorAlert(errorText);
   };
 
   return (
