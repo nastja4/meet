@@ -4,7 +4,7 @@ import EventList from './components/EventList';
 import NumberOfEvents from './components/NumberOfEvents';
 import { useState, useEffect } from 'react';
 import { getEvents, extractLocations } from './api';
-import { ErrorAlert, InfoAlert } from './components/Alert';
+import { ErrorAlert, InfoAlert, WarningAlert } from './components/Alert';
 
 import './App.css';
 
@@ -15,10 +15,7 @@ const App = () => {
   const [currentCity, setCurrentCity] = useState("See all cities");
   const [infoAlert, setInfoAlert] = useState("");
   const [errorAlert, setErrorAlert] = useState("");
-
-  useEffect(() => {
-    fetchData();
-  }, [currentCity, currentNOE]); // fetchData() is called whenever there’s a change in the currentCity, currentNOE state
+  const [warningAlert, setWarningAlert] = useState("");  
 
   const fetchData = async () => {
     const allEvents = await getEvents(); // getEvents() is the function from api.js
@@ -29,12 +26,24 @@ const App = () => {
     setAllLocations(extractLocations(allEvents));
   }
 
+
+  useEffect(() => {
+    if (navigator.onLine) {
+      setWarningAlert("");      
+    } else {
+      setWarningAlert("You are currently offline. Some features may not be available")
+    }
+    fetchData();
+  }, [currentCity, currentNOE]); // fetchData() is called whenever there’s a change in the currentCity, currentNOE state
+  
+  
   return (  
     <div className="App">
       <h1 className='main-title'><span>Meet</span> App </h1>
       <div className="alerts-container">
         {infoAlert.length ? <InfoAlert text={infoAlert} /> : null}
         {errorAlert.length ? <ErrorAlert text={errorAlert} /> : null}
+        {warningAlert.length ? <WarningAlert text={warningAlert} /> : null}
       </div>      
       <CitySearch 
         allLocations={allLocations} 
