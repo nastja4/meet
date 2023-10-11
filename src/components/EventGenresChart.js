@@ -26,6 +26,9 @@ const EventGenresChart = ({ events }) => {
     const radius = outerRadius;
     const x = cx + radius * Math.cos(-midAngle * RADIAN) * 1.07;
     const y = cy + radius * Math.sin(-midAngle * RADIAN) * 1.07;
+
+    const fontSize = 11; // setting the font size
+
     return percent ? (
       <text
         x={x}
@@ -42,14 +45,21 @@ const EventGenresChart = ({ events }) => {
 
   return (   
     <ResponsiveContainer width="99%" height={400}>
-      <PieChart>
+      <PieChart
+          margin={{
+          // top: 20,
+          // right: 20,
+          // bottom: 60,
+          left: 30,
+        }}
+      >
         <Pie 
           dataKey="value" 
           data={data} 
           fill="#2E2EFF" // #8884d8 
           labelLine={false}
           label = {renderCustomizedLabel}
-          outerRadius={130}          
+          outerRadius={100}          
         />
       </PieChart>
     </ResponsiveContainer>    
