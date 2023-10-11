@@ -211,3 +211,20 @@ input[type="number"] {
   width: 250px;
   z-index: 1000;
 }
+
+.charts-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-radius: 4px;
+  /* border: 1px solid #ccc; */
+  border-style: inset;
+  border-width: 1px;
+  background-color: white;
+}
+
+@media (max-width: 768px) {
+  .charts-container {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
