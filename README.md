@@ -12,7 +12,7 @@ Link: https://nastja4.github.io/meet/
 
 Screnshots:
 ![Screenshot N1](https://github.com/nastja4/meet/assets/126527606/a5f89bb5-0bae-4c88-bc84-025df6c5ee80)
-![Screenshot N2](https://github.com/nastja4/meet/assets/126527606/cd6e2668-2367-47c8-829c-f71b0a6d9d08)
+![Screenshot N2](https://github.com/nastja4/meet/assets/126527606/324cea32-1ddc-40fd-af80-55bbe802a718)
 
 ## Table of Contents
 
