@@ -120,7 +120,7 @@ Screnshots:
 
 ## Serverless Functions
 
-Meet App utilizes serverless functions to efficiently handle various backend tasks. These functions play a crucial role in performing tasks such as user authentication and fetching event data from the Google Calendar API.
+Meet App utilizes serverless functions to efficiently handle various backend tasks, including user authentication and fetching event data from the Google Calendar API. In this project, these serverless functions are hosted on AWS Lambda, which is a serverless computing service provided by Amazon Web Services. AWS Lambda allows us to run code without the need to provision or manage servers, making it a convenient choice for serverless architecture in web applications.
 
 ### Benefits of Serverless Functions
 
