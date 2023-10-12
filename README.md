@@ -6,10 +6,6 @@ App icon:
 
 ![app icon](https://github.com/nastja4/meet/assets/126527606/d6ac4a62-aecb-4476-a66c-a4f6b2d4b8fa)
 
-
-
-Link: https://nastja4.github.io/meet/
-
 Screnshots:
 ![Screenshot N1](https://github.com/nastja4/meet/assets/126527606/a5f89bb5-0bae-4c88-bc84-025df6c5ee80)
 ![Screenshot N2](https://github.com/nastja4/meet/assets/126527606/324cea32-1ddc-40fd-af80-55bbe802a718)
