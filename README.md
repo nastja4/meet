@@ -122,6 +122,30 @@ Screnshots:
 
 Meet App utilizes serverless functions to efficiently handle various backend tasks, including user authentication and fetching event data from the Google Calendar API. In this project, these serverless functions are hosted on AWS Lambda, which is a serverless computing service provided by Amazon Web Services. AWS Lambda allows us to run code without the need to provision or manage servers, making it a convenient choice for serverless architecture in web applications.
 
+Installing Serverless:
+```
+npm install -g serverless # -g flag stands for globally
+```
+Creating a Serverless Service:
+```
+# Create a new serverless service/project using aws-nodejs
+serverless create --template aws-nodejs --path auth-server
+# Jump into the newly created directory
+cd auth-server
+# Then create a package.json
+npm init
+# You can simply press the Enter key through all the options here.
+```
+After completing these steps, we get the structure of the new “auth-server” directory:
+```
+auth-server
+├── .gitignore
+├── handler.js
+├── package.json
+└── serverless.yml
+```
+The handler.js file is where we implement the serverless functions. The serverless.yml file is where we configure them.
+
 ### Benefits of Serverless Functions
 
 - **Simplified Backend**: Our adoption of serverless architecture eliminates the need for traditional backend servers, leading to reduced complexity and minimal maintenance overhead.
