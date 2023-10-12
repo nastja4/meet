@@ -59,10 +59,10 @@ const App = () => {
         <CityEventsChart allLocations={allLocations} events={events} />  
       </div>
       <p>
-        *The pie chart (on the left) visualizes the different event topics and their popularity.        
+        *The pie chart visualizes the different event topics and their popularity.        
       </p>
       <p>
-        The scatterplot (on the right) displays data about the number of events in each location
+        The scatterplot displays data about the number of events in each location
       </p>
       <br/>
       <EventList events={events} />
