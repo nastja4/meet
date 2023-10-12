@@ -21,11 +21,7 @@ describe('<Event /> component', () => {
   // Then the event details should be collapsed by default.
   test('renders event`s title, event details should be collapsed by default', () => {
     expect(EventComponent.queryByText(allEvents[0].summary)).toBeInTheDocument();
-  });
-
-  // test('renders event`s start time', () => {
-  //   expect(EventComponent.queryByText(allEvents[0].created)).toBeInTheDocument();
-  // });
+  }); 
 
   test('renders event`s location', () => {
     expect(EventComponent.queryByText(allEvents[0].location)).toBeInTheDocument();
@@ -57,6 +53,4 @@ describe('<Event /> component', () => {
     expect(EventComponent.container.querySelector(".eventDetails")).toBeNull();
     expect(EventComponent.getByText("Show Details")).toBeInTheDocument();
   });
-
-
 });
