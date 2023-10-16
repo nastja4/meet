@@ -124,10 +124,12 @@ Meet App utilizes serverless functions to efficiently handle various backend tas
 
 Installing Serverless:
 ```
+
 npm install -g serverless # -g flag stands for globally
 ```
 Creating a Serverless Service:
 ```
+
 # Create a new serverless service/project using aws-nodejs
 serverless create --template aws-nodejs --path auth-server
 # Jump into the newly created directory
@@ -138,6 +140,7 @@ npm init
 ```
 After completing these steps, we get the structure of the new “auth-server” directory:
 ```
+
 auth-server
 ├── .gitignore
 ├── handler.js
@@ -180,18 +183,21 @@ These serverless functions are indispensable to the seamless operation of Meet A
 
 The Meet App was created using a tool create-react-app (or “CRA”):
 ```
+
 npx create-react-app meet --template cra-template-pwa --use-npm
 ```
 This command created the project structure within a new “meet” folder.
 
 After running these commands, you should be able to navigate to your app in the browser:
 ```
+
 cd meet
 npm run start
 ```
 
 This is followed by adding gh-pages to the project’s dev dependencies:
 ```
+
 npm install --save-dev gh-pages
 ```
 and creating a new GitHub repository with the name "meet".
@@ -209,6 +215,7 @@ and creating a new GitHub repository with the name "meet".
 We use a testing utility specifically designed for testing React components - React Testing Library - for creating unit and integration tests for our project and a JavaScript testing framework. These tests help ensure that individual components and their interactions work as expected. You can find the test files in the `__tests__` directory.
 You can run your test by inputting the following command in your terminal:
 ```
+
 npm run test
 ```
 
