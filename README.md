@@ -22,7 +22,6 @@ Screnshots:
 - [Testing](#testing)
 - [Deployment](#deployment)
 - [Contributing](#contributing)
-- [License](#license)
 
 ## Features
 
@@ -249,4 +248,3 @@ Contributions to this project are welcome. To contribute, follow these steps:
 4. Push to the branch: `git push origin feature/new-feature`
 5. Submit a pull request for review.
 
-## License
